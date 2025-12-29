@@ -1,0 +1,17 @@
+name: GitHub Actions Demo for frontend
+
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build-karna-hai:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello world"
+      - run: npm install
+      - run: npm run build
+    
+
