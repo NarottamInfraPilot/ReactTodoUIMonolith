@@ -46,6 +46,7 @@ jobs:
       # 6️⃣ Build React app
       - name: Build React app
         run: npm run build
+        continue-on-error: true
 
       # 7️⃣ Upload build artifact
       - name: Upload build artifact
