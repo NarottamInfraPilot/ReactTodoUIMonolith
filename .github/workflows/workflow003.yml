@@ -1,4 +1,4 @@
-name: CI
+name: CI and CD
 
 on: 
   push:
@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v7.0.0
+        with:
+          name: artifact
       
 
 
