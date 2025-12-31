@@ -42,7 +42,7 @@ jobs:
         uses: actions/download-artifact@v7.0.0
         with:
           name: Build_Artifact
-          path: /build
+          path: build
       - name: Copy files via SSH
         uses: appleboy/scp-action@v1
         with:
