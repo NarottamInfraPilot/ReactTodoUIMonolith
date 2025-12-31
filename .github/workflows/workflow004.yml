@@ -31,7 +31,7 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v6.0.0
         with:
-          name: Build_Artifact
+          # name: Build_Artifact
           path: /build
       
   deploy:  
@@ -41,9 +41,9 @@ jobs:
 
       - name: Download a Build Artifact
         uses: actions/download-artifact@v7.0.0
-        with:
-          name: Build_Artifact
-          path: build
+        # with:
+        #   name: Build_Artifact
+        #   path: build
       - name: Copy files via SSH
         uses: appleboy/scp-action@v1
         with:
