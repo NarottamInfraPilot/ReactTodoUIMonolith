@@ -49,6 +49,7 @@ jobs:
           script: |
             sudo apt update
             sudo apt install nginx -y
+            sudo mkdir -p /var/www/html
             cd /tmp
             sudo unzip -o build.zip
             sudo cp -r build/* /var/www/html/
