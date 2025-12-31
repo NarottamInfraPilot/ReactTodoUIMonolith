@@ -39,6 +39,18 @@ jobs:
           port: 22
           source: build.zip
           target: /tmp
+      - name: Execute remote SSH commands using password
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          password: ${{ secrets.VM_PASSWORD }}
+          port: 22
+          script: |
+            sudo apt update
+            sudo apt install nginx -y
+            unzip -o build.zip
+            sudo cp -r build/* /var/www/html/
           
 
       
