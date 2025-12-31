@@ -50,7 +50,7 @@ jobs:
             sudo apt update
             sudo apt install nginx -y
             cd /tmp
-            unzip -o build.zip
+            sudo unzip -o build.zip
             sudo cp -r build/* /var/www/html/
 
           
