@@ -49,7 +49,7 @@ jobs:
         with:
           username: ${{ secrets.VM_USER }}
           host: ${{ secrets.HOST }}
-          password: ${{ secrets.VM_PASS }}
+          password: ${{ secrets.VM_PASSWORD }}
           port: 22
           source: /build/*
           target: /tmp/react-build
@@ -59,7 +59,7 @@ jobs:
         with: 
           host: ${{ secrets.HOST }}
           username: ${{ secrets.VM_USER }}
-          password: ${{ secrets.VM_PASS }}
+          password: ${{ secrets.VM_PASSWORD }}
           port: 22
           script: |
             sudo apt update
