@@ -32,8 +32,8 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v6.0.0
         with:
-          # name: Build_Artifact
-          path: build/
+          name: Build_Artifact
+          path: build
       
   deploy:  
     needs: build
@@ -42,9 +42,9 @@ jobs:
 
       - name: Download a Build Artifact
         uses: actions/download-artifact@v7.0.0
-        # with:
-        #   name: Build_Artifact
-        #   path: build
+        with:
+          name: Build_Artifact
+          # path: build
       - name: Copy files via SSH
         uses: appleboy/scp-action@v1
         with:
@@ -52,7 +52,7 @@ jobs:
           host: ${{ secrets.HOST }}
           password: ${{ secrets.VM_PASSWORD }}
           port: 22
-          # source: artifact.zip
+          source: Build_Artifact
           target: /tmp/react-build
           
       - name: Execute remote SSH commands using password
